@@ -1,2 +1,2 @@
 # Prediction-of-Product-Sales
-This first project will be a sales prediction for food items sold at various stores.
+[Part 1 : Prediction of Product Sales](Prediction_of_Product_Sales.ipynb)
