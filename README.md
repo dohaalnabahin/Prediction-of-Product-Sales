@@ -41,7 +41,7 @@ The correlation heatmap reveals a strong positive relationship between **Max Pri
 ## 🤖 Model & Evaluation
 
 ### Model Used
-A **Linear Regression** model was built to predict item sales based on product and outlet features.
+A **Random Forest model** model was built to predict item sales based on product and outlet features.
 
 ### Preprocessing
 - Missing values handled using median imputation for numerical features
@@ -52,12 +52,12 @@ A **Linear Regression** model was built to predict item sales based on product a
 
 | Metric | Training Set | Test Set |
 |--------|-------------|----------|
-| R² Score | 0.56 | 0.57 |
-| MAE | ~847 | ~804 |
-| RMSE | ~1,082 | ~1,057 |
+| R² Score | 0.72 | 0.58|
+| MAE | ~ 643 | ~741|
+| RMSE | ~826,163 | ~ 1,135,778 |
 
 ### Key Finding
-The model explains approximately **57% of the variance in sales**, with **Max Price** emerging as the most influential predictor. While the model provides a solid baseline, future iterations could explore tree-based models to capture non-linear relationships in the data.
+Our final model achieved an R-squared ( R2 ) score of 0.59 on new data. In simple terms, this means the model can explain and predict approximately 59% of the variation in product sales. While it doesn't capture everything, it provides a solid foundation for understanding the primary factors that drive sales, such as price and store location..
 
 ---
 
