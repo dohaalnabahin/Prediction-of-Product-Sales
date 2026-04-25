@@ -1,54 +1,82 @@
+# 🛒 Prediction of Product Sales
 
-# Prediction of Product Sales
+![Python](https://img.shields.io/badge/Python-3.10-blue?style=flat-square&logo=python)
+![Pandas](https://img.shields.io/badge/Pandas-2.0-green?style=flat-square&logo=pandas)
+![Seaborn](https://img.shields.io/badge/Seaborn-0.12-teal?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Complete-brightgreen?style=flat-square)
 
-## Project Overview
-This project analyzes sales data for food items sold across different retail stores.  
-The main goal is to explore the dataset and identify the key factors that influence product sales.
+> Analyzing food item sales across retail stores to identify the key factors that drive product sales.
 
-## Objectives
-- Explore and understand the structure of the dataset
-- Clean and prepare the data for analysis
-- Handle missing values and inconsistent categories
-- Create visualizations to understand patterns in the data
-- Identify relationships between product and outlet characteristics and sales
+---
 
-## Tools and Libraries
-This project uses the following tools:
+## 📌 Project Overview
 
-- Python
-- Pandas
-- Matplotlib
-- Seaborn
-- Google Colab
+Retail businesses generate massive amounts of sales data, but understanding **what drives product performance** remains a challenge. This project dives into a food retail dataset to uncover patterns, clean messy data, and visualize the factors that influence sales — helping retailers make smarter, data-driven decisions.
 
-## Data Analysis
-The project includes several exploratory visualizations to better understand the data, such as:
+---
 
-- Histograms to analyze the distribution of numerical features
-- Boxplots to examine statistical summaries and detect outliers
-- Countplots to visualize the frequency of categorical variables
-- Heatmaps to explore correlations between features
+## 🎯 Objectives
 
-## Goal
-The goal of this analysis is to help retailers understand which product and outlet characteristics play an important role in increasing sales
+- ✅ Explore and understand the structure of the dataset
+- ✅ Clean and prepare the data for analysis
+- ✅ Handle missing values and inconsistent categories
+- ✅ Create visualizations to uncover patterns
+- ✅ Identify relationships between product/outlet characteristics and sales
 
- ### Distribution of Numerical Features
-<img width="1241" height="990" alt="Histograms to view the distributions of numerical features in your dataset" src="https://github.com/user-attachments/assets/9b07ee12-6881-42da-bd77-b29311ac9eec" />
+---
 
-The histograms above show the distribution of several numerical variables in the dataset, including **Weight, Visibility, Max Price, Store Age, and Sales**.
+## 🛠️ Tools & Libraries
 
-From the plots, we can observe that **sales values are right-skewed**, meaning that most products have lower sales while a smaller number of products achieve very high sales. Additionally, **visibility values are concentrated near zero**, indicating that many items have relatively low visibility in stores.
------------------------------------------------------------------------------------------------------------------------------------------------------
- ### Correlation Heatmap
- 
-<img width="515" height="418" alt="Heatmap to view the correlation between features" src="https://github.com/user-attachments/assets/d9ad4110-b1ad-4b97-97a1-f66fc708fd7d" />
+```python
+Language    : Python 3.10
+Libraries   : Pandas, Matplotlib, Seaborn
+Environment : Google Colab
+```
 
+---
 
-The heatmap above illustrates the correlations between numerical variables in the dataset, including **Weight, Visibility, Max Price, Store Age, and Sales**.
+## 📊 Exploratory Data Analysis
 
-- **Strong Positive Correlation (0.57):**  
-  There is a strong positive correlation between **Max_Price** and **Sales**, suggesting that higher-priced products tend to generate higher sales revenue.
+### 1️⃣ Distribution of Numerical Features
 
-- **Weak Correlations (Near Zero):**  
-  Other variables such as **Weight** and **Visibility** show very weak correlations with **Sales**, indicating that they may not be strong predictors of sales in this analysis.
+<img width="1241" alt="Histograms" src="https://github.com/user-attachments/assets/9b07ee12-6881-42da-bd77-b29311ac9eec"/>
 
+**Key Findings:**
+- 📈 **Sales** are **right-skewed** — most products have lower sales, while a few achieve very high sales
+- 👁️ **Visibility** is concentrated near zero — many items have low in-store visibility
+- ⚖️ **Weight** follows a roughly normal distribution across products
+
+---
+
+### 2️⃣ Correlation Heatmap
+
+<img width="515" alt="Heatmap" src="https://github.com/user-attachments/assets/d9ad4110-b1ad-4b97-97a1-f66fc708fd7d"/>
+
+**Key Findings:**
+
+| Relationship | Correlation | Insight |
+|---|---|---|
+| Max Price ↔ Sales | **+0.57** (Strong) | Higher-priced products tend to generate higher sales |
+| Weight ↔ Sales | ~0 (Weak) | Weight has minimal impact on sales |
+| Visibility ↔ Sales | ~0 (Weak) | Visibility alone is not a strong sales predictor |
+
+---
+
+## 💡 Key Takeaways
+
+- **Price is the strongest predictor** of sales in this dataset
+- **Visibility and Weight** show weak correlations with sales — suggesting other factors matter more
+- Sales distribution is skewed, which is important to consider when building predictive models
+
+---
+
+## 📬 Connect
+
+**Doha Al-Nabahin**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat-square&logo=linkedin)](https://linkedin.com/in/doha-samir12)
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=flat-square&logo=github)](https://github.com/dohaalnabahin)
+
+---
+
+*Prediction of Product Sales Data Science Project | 2025 - 2026*
