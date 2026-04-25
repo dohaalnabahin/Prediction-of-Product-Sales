@@ -57,7 +57,7 @@ A **Random Forest model** model was built to predict item sales based on product
 | RMSE | ~826,163 | ~ 1,135,778 |
 
 ### Key Finding
-Our final model achieved an R-squared ( R2 ) score of 0.59 on new data. In simple terms, this means the model can explain and predict approximately 59% of the variation in product sales. While it doesn't capture everything, it provides a solid foundation for understanding the primary factors that drive sales, such as price and store location..
+Our final model achieved an R-squared ( R2 ) score of 0.58 on new data. In simple terms, this means the model can explain and predict approximately 58% of the variation in product sales. While it doesn't capture everything, it provides a solid foundation for understanding the primary factors that drive sales, such as price and store location..
 
 ---
 
