@@ -77,7 +77,7 @@ Three regression models were built and compared to find the best predictor of pr
 
 ## 📈 Linear Regression — Top Coefficients
 
-<img width="800" alt="Coefficients Plot" src="تنزيل (1).png"/>
+<img width="800" alt="Coefficients Plot" src="تنزيل.png"/>
 
 ### Interpretation
 The coefficients plot reveals which features have the **strongest positive or negative impact** on predicted sales according to the Linear Regression model:
