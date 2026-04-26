@@ -75,6 +75,18 @@ Three regression models were built and compared to find the best predictor of pr
 
 ---
 
+## 🏆 Recommended Model — Tuned Random Forest
+
+The **Tuned Random Forest** achieved the best balance between accuracy and reliability:
+
+- **R² = 0.59** — explains 59% of the variation in product sales
+- **MAE = $741** — predictions are off by ~$741 on average
+- **Well-balanced** — training (0.72) vs test (0.59) shows no severe overfitting
+
+The Default Random Forest had a training R² of 0.93 but only 0.55 on test — a clear sign of overfitting that GridSearchCV corrected.
+
+---
+
 ## 📈 Linear Regression — Top Coefficients
 
 <img width="800" alt="Coefficients Plot" src="تنزيل.png"/>
@@ -114,17 +126,6 @@ The feature importance plot shows which features the Random Forest model **relie
 
 **Key Takeaway:** Unlike the coefficients plot, the Random Forest confirms that **Max_Price alone accounts for ~44% of predictive power** — making it the single most actionable lever for retailers.
 
----
-
-## 🏆 Recommended Model — Tuned Random Forest
-
-The **Tuned Random Forest** achieved the best balance between accuracy and reliability:
-
-- **R² = 0.59** — explains 59% of the variation in product sales
-- **MAE = $741** — predictions are off by ~$741 on average
-- **Well-balanced** — training (0.72) vs test (0.59) shows no severe overfitting
-
-The Default Random Forest had a training R² of 0.93 but only 0.55 on test — a clear sign of overfitting that GridSearchCV corrected.
 
 ---
 
