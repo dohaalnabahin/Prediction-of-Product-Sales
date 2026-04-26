@@ -99,7 +99,7 @@ The coefficients plot reveals which features have the **strongest positive or ne
 
 ## 🌲 Random Forest — Feature Importances
 
-<img width="800" alt="Feature Importances" src="https://github.com/user-attachments/assets/تنزيل__1_.png"/>
+<img width="800" alt="Feature Importances" src="تنزيل (1).png"/>
 
 ### Interpretation
 The feature importance plot shows which features the Random Forest model **relies on most** when making predictions:
