@@ -52,8 +52,6 @@ Additionally, many items have **near-zero visibility** in stores, raising the qu
 | Weight ↔ Sales | ~0 (Weak) | Product weight has minimal impact on sales |
 | Visibility ↔ Sales | ~0 (Weak) | Shelf visibility alone is not a strong predictor |
 
-**Pricing strategy** plays a far more significant role than product size or shelf placement in driving sales.
-
 ---
 
 ## 🤖 Models & Evaluation
@@ -64,8 +62,8 @@ Three regression models were built and compared to find the best predictor of pr
 
 | Model | R² (Train) | R² (Test) | MAE (Test) |
 |-------|-----------|----------|------------|
-| Linear Regression | 0.56 | 0.57 | ~847 |
-| Default Random Forest | 0.93 | 0.55 | ~762 |
+| Linear Regression | 0.56 | 0.57 | ~$847 |
+| Default Random Forest | 0.93 | 0.55 | ~$762 |
 | **Tuned Random Forest** ✅ | **0.72** | **0.59** | **$741** |
 
 ### Preprocessing Pipeline
@@ -73,10 +71,48 @@ Three regression models were built and compared to find the best predictor of pr
 - Categorical features encoded using One-Hot Encoding
 - Numerical features scaled using StandardScaler
 - Best hyperparameters found via GridSearchCV:
-  - `max_depth = 10`
-  - `n_estimators = 200`
-  - `max_features = 1.0`
-  - `min_samples_leaf = 1`
+  - `max_depth = 10` | `n_estimators = 200` | `max_features = 1.0` | `min_samples_leaf = 1`
+
+---
+
+## 📈 Linear Regression — Top Coefficients
+
+<img width="800" alt="Coefficients Plot" src="https://github.com/user-attachments/assets/تنزيل.png"/>
+
+### Interpretation
+The coefficients plot reveals which features have the **strongest positive or negative impact** on predicted sales according to the Linear Regression model:
+
+**Positive Impact (increases sales):**
+- 🏪 **Store_Type_Supermarket Type3** (+1,611) — The single most powerful positive predictor. Supermarket Type3 stores generate significantly higher sales than any other store type
+- 💰 **Max_Price** (+984) — Higher-priced items consistently drive more revenue
+- 🐟 **Category_Seafood** (+300) — Seafood products outperform most other categories
+- 🏬 **Store_Type_Supermarket Type1** (+236) — Also performs above average
+
+**Negative Impact (decreases sales):**
+- 🛒 **Store_Type_Grocery Store** (-1,733) — The strongest negative predictor. Grocery stores generate far lower sales than supermarkets
+- 🥛 **Category_Dairy** (-123) — Dairy products tend to have lower average sales
+- 🏪 **Store_Type_Supermarket Type2** (-114) — Underperforms compared to Type1 and Type3
+
+**Key Takeaway:** Store type has the most dramatic impact on sales — far greater than product category or price alone.
+
+---
+
+## 🌲 Random Forest — Feature Importances
+
+<img width="800" alt="Feature Importances" src="https://github.com/user-attachments/assets/تنزيل__1_.png"/>
+
+### Interpretation
+The feature importance plot shows which features the Random Forest model **relies on most** when making predictions:
+
+| Rank | Feature | Importance | Insight |
+|------|---------|------------|---------|
+| 1 | **Max_Price** | ~0.44 | By far the most important feature — price drives nearly half of the model's predictions |
+| 2 | **Store_Type_Grocery Store** | ~0.19 | Being a Grocery Store significantly impacts sales (negatively) |
+| 3 | **Visibility** | ~0.10 | More shelf visibility than the linear model suggested |
+| 4 | **Store_Type_Supermarket Type3** | ~0.05 | High-performing store format |
+| 5 | **Weight** | ~0.05 | Product weight plays a small but measurable role |
+
+**Key Takeaway:** Unlike the coefficients plot, the Random Forest confirms that **Max_Price alone accounts for ~44% of predictive power** — making it the single most actionable lever for retailers.
 
 ---
 
@@ -86,18 +122,25 @@ The **Tuned Random Forest** achieved the best balance between accuracy and relia
 
 - **R² = 0.59** — explains 59% of the variation in product sales
 - **MAE = $741** — predictions are off by ~$741 on average
-- **Well-balanced** — training score (0.72) vs test score (0.59) shows minimal overfitting
+- **Well-balanced** — training (0.72) vs test (0.59) shows no severe overfitting
 
-The Default Random Forest had a training R² of 0.93 but only 0.55 on test data — a clear sign of overfitting. Tuning with GridSearchCV corrected this and improved generalization.
+The Default Random Forest had a training R² of 0.93 but only 0.55 on test — a clear sign of overfitting that GridSearchCV corrected.
 
 ---
 
-## 💡 Recommendations for Stakeholders
+## 💡 Final Recommendations for Stakeholders
 
-- **Invest in pricing strategy** — Max Price has the strongest measurable impact on sales
-- **Investigate low-visibility products** — improving shelf placement could unlock untapped revenue
-- **Prioritize high-performing outlet types** — certain store formats consistently generate higher sales
-- **Focus on high-margin product categories** — not all product types perform equally across store locations
+Based on both models' insights, here are the key recommendations:
+
+1. **Prioritize pricing strategy** — Max Price is the #1 driver of sales in both models. Products with higher price points consistently outperform lower-priced alternatives.
+
+2. **Invest in Supermarket Type3 locations** — These stores generate the highest sales by a wide margin. Expanding presence in this format would have the greatest revenue impact.
+
+3. **Reassess Grocery Store strategy** — Grocery stores are the strongest negative predictor of sales. Consider whether the product mix or pricing needs adjustment for this channel.
+
+4. **Improve product visibility** — The Random Forest identified Visibility as the 3rd most important feature (~10% importance). Better shelf placement could meaningfully boost sales for underperforming products.
+
+5. **Focus on high-value categories** — Seafood and Supermarket-exclusive products consistently outperform. Expanding these categories in high-performing stores could maximize revenue.
 
 ---
 
